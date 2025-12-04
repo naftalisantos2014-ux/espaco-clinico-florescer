@@ -1,26 +1,371 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Anamnese Infantil</title>
+  <meta charset="UTF-8">
+  <title>Ficha de Anamnese Infantil – Espaço Clínico Florescer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --verde-escuro: #1b5e20;
+      --verde: #2e7d32;
+      --verde-claro: #e8f5e9;
+      --cinza: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:#f1f8e9;
+      color:#222;
+    }
+    header {
+      background:#ffffffcc;
+      border-bottom:1px solid #e0e0e0;
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(6px);
+    }
+    .topbar {
+      max-width:1080px;margin:0 auto;
+      padding:10px 20px;display:flex;
+      align-items:center;justify-content:space-between;gap:10px;
+    }
+    .logo {display:flex;align-items:center;gap:8px;}
+    .logo-icon {
+      width:28px;height:28px;border-radius:50%;
+      background:radial-gradient(circle at 30% 20%,#c8e6c9,#2e7d32);
+      color:#fff;font-weight:700;font-size:16px;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .logo-main {font-weight:700;color:var(--verde-escuro);font-size:15px;}
+    .logo-sub {font-size:11px;color:var(--cinza);}
+    .back-link {
+      font-size:13px;text-decoration:none;color:var(--verde);
+      padding:6px 10px;border-radius:999px;border:1px solid #c8e6c9;background:#f9fff9;
+    }
+    .back-link:hover {background:#e8f5e9;}
+    .container {
+      max-width:980px;margin:24px auto 32px;
+      padding:0 18px 24px;
+    }
+    .form-card {
+      background:#fff;border-radius:18px;
+      padding:20px 22px;
+      box-shadow:0 16px 30px rgba(0,0,0,.06);
+      border:1px solid #e0e0e0;
+    }
+    h1 {
+      font-size:20px;text-align:center;
+      color:var(--verde-escuro);margin-bottom:4px;
+    }
+    .subtitle {
+      text-align:center;font-size:13px;
+      color:var(--cinza);margin-bottom:14px;
+    }
+    .info-banner {
+      font-size:12px;background:var(--verde-claro);
+      border-radius:10px;padding:8px 10px;
+      margin-bottom:14px;color:var(--verde-escuro);
+    }
+    fieldset {
+      border:1px solid #e0e0e0;border-radius:12px;
+      padding:14px 14px 10px;margin-bottom:16px;
+      background:#fafafa;
+    }
+    legend {
+      font-weight:600;font-size:13px;
+      padding:0 6px;color:var(--verde-escuro);
+    }
+    label {
+      display:block;margin-top:8px;
+      font-size:13px;color:#444;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    textarea,
+    select {
+      width:100%;padding:7px 8px;margin-top:3px;
+      border-radius:6px;border:1px solid #d0d0d0;
+      font-size:13px;font-family:inherit;
+    }
+    textarea {min-height:70px;resize:vertical;}
+    .inline-group {
+      display:flex;flex-wrap:wrap;
+      gap:10px;margin-top:4px;
+    }
+    .inline-group > div {flex:1 1 150px;}
+    .checkbox-group {margin-top:4px;font-size:13px;}
+    .checkbox-group label {
+      display:inline-flex;align-items:center;
+      gap:4px;margin-right:12px;
+    }
+    .section-note {
+      font-size:11px;color:#777;margin-top:6px;
+    }
+    .actions {text-align:center;margin-top:10px;}
+    button[type="submit"] {
+      padding:10px 22px;border-radius:999px;
+      border:none;background:var(--verde);
+      color:#fff;font-size:14px;cursor:pointer;
+      box-shadow:0 10px 20px rgba(46,125,50,.45);
+    }
+    button[type="submit"]:hover {background:#256728;}
+    .small-text {
+      font-size:11px;color:#777;
+      text-align:center;margin-top:8px;
+    }
+    @media(max-width:720px) {
+      .form-card {padding:16px 14px;}
+    }
+  </style>
 </head>
 <body>
-<h1>Ficha de Anamnese Infantil</h1>
+<header>
+  <div class="topbar">
+    <div class="logo">
+      <div class="logo-icon">F</div>
+      <div>
+        <div class="logo-main">Espaço Clínico Florescer</div>
+        <div class="logo-sub">Ficha de Anamnese Infantil</div>
+      </div>
+    </div>
+    <a class="back-link" href="index.html">← Voltar para a página inicial</a>
+  </div>
+</header>
 
-<form action="https://formspree.io/f/xblnkggy" method="POST">
-  <input type="hidden" name="_redirect" value="https://espaco-clinico-florescer.vercel.app/obrigado.html">
+<div class="container">
+  <div class="form-card">
+    <h1>FICHA ELETRÔNICA DE ANAMNESE INFANTIL</h1>
+    <p class="subtitle">Psicanalista Clínica – Maura Santos • Especialista em Atendimento Infantojuvenil</p>
+    <div class="info-banner">
+      As informações abaixo são sigilosas e utilizadas apenas para fins clínicos, conforme o Código de Ética Profissional.
+    </div>
 
-  Nome da criança:<br>
-  <input type="text" name="Nome da criança"><br><br>
+    <form action="https://formspree.io/f/xblnkggy" method="POST">
+      <input type="hidden" name="_subject" value="Nova Ficha de Anamnese Infantil - Espaço Clínico Florescer">
+      <input type="hidden" name="_language" value="pt-BR">
+      <input type="hidden" name="_redirect" value="https://espaco-clinico-florescer.vercel.app/obrigado.html">
 
-  Nome do responsável:<br>
-  <input type="text" name="Responsável"><br><br>
+      <fieldset>
+        <legend>1. Dados da Criança</legend>
+        <label for="nome_crianca">Nome completo:</label>
+        <input type="text" id="nome_crianca" name="Nome completo da criança" required>
 
-  Motivo da consulta:<br>
-  <textarea name="Motivo"></textarea><br><br>
+        <div class="inline-group">
+          <div>
+            <label for="idade_crianca">Idade:</label>
+            <input type="number" id="idade_crianca" name="Idade" min="0">
+          </div>
+          <div>
+            <label for="data_nascimento">Data de nascimento:</label>
+            <input type="date" id="data_nascimento" name="Data de nascimento">
+          </div>
+          <div>
+            <label for="sexo_crianca">Sexo:</label>
+            <select id="sexo_crianca" name="Sexo">
+              <option value="">Selecione</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Outro / Prefiro não informar">Outro / Prefiro não informar</option>
+            </select>
+          </div>
+        </div>
 
-  <button type="submit">Enviar</button>
-</form>
+        <label for="endereco_crianca">Endereço:</label>
+        <input type="text" id="endereco_crianca" name="Endereço">
+
+        <label for="escola_crianca">Nome da escola:</label>
+        <input type="text" id="escola_crianca" name="Escola">
+
+        <label for="serie_crianca">Série/ano:</label>
+        <input type="text" id="serie_crianca" name="Série/Ano">
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Dados dos Responsáveis</legend>
+        <label for="responsavel_principal">Nome do responsável principal:</label>
+        <input type="text" id="responsavel_principal" name="Responsável principal" required>
+
+        <label for="relacao_crianca">Relação com a criança:</label>
+        <input type="text" id="relacao_crianca" name="Relação com a criança" placeholder="Mãe, pai, avó(ô), tia(o), etc.">
+
+        <div class="inline-group">
+          <div>
+            <label for="telefone_responsavel">Telefone:</label>
+            <input type="text" id="telefone_responsavel" name="Telefone">
+          </div>
+          <div>
+            <label for="email_responsavel">E-mail:</label>
+            <input type="email" id="email_responsavel" name="E-mail">
+          </div>
+        </div>
+
+        <label for="responsavel_autoriza">Responsável que autoriza o atendimento:</label>
+        <input type="text" id="responsavel_autoriza" name="Responsável que autoriza">
+
+        <label>Pais convivem juntos?</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="Pais convivem juntos?" value="Sim"> Sim</label>
+          <label><input type="radio" name="Pais convivem juntos?" value="Não"> Não</label>
+        </div>
+
+        <label for="guarda_divisao">Se não, como é a guarda e divisão de cuidados?</label>
+        <textarea id="guarda_divisao" name="Guarda e divisão de cuidados"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Motivo da Procura</legend>
+        <label for="motivo_procura">Descreva o motivo pelo qual a criança foi encaminhada ou procurou atendimento:</label>
+        <textarea id="motivo_procura" name="Motivo da procura"></textarea>
+
+        <label for="tempo_ocorrencia">Há quanto tempo ocorre?</label>
+        <textarea id="tempo_ocorrencia" name="Tempo de ocorrência"></textarea>
+
+        <label for="tentativas_ajuda">O que já tentaram para ajudar a criança?</label>
+        <textarea id="tentativas_ajuda" name="Tentativas anteriores de ajuda"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Rotina da Criança</legend>
+        <label for="sono_crianca">Horário de sono / qualidade do sono:</label>
+        <textarea id="sono_crianca" name="Sono"></textarea>
+
+        <label for="alimentacao_crianca">Alimentação (apetite, seletividade, mudanças):</label>
+        <textarea id="alimentacao_crianca" name="Alimentação"></textarea>
+
+        <label for="rotina_escolar">Rotina escolar (adaptação, comportamento, desempenho):</label>
+        <textarea id="rotina_escolar" name="Rotina escolar"></textarea>
+
+        <label for="rotina_casa">Rotina em casa (tarefas, obediência, convivência):</label>
+        <textarea id="rotina_casa" name="Rotina em casa"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Desenvolvimento Infantil</legend>
+
+        <label>Gravidez planejada?</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="Gravidez planejada" value="Sim"> Sim</label>
+          <label><input type="radio" name="Gravidez planejada" value="Não"> Não</label>
+        </div>
+
+        <label for="intercorrencias_gestacao">Intercorrências na gestação?</label>
+        <textarea id="intercorrencias_gestacao" name="Intercorrências na gestação"></textarea>
+
+        <label for="tipo_parto">Tipo de parto:</label>
+        <input type="text" id="tipo_parto" name="Tipo de parto" placeholder="Normal, cesárea, fórceps, etc.">
+
+        <label>Prematuridade?</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="Prematuridade" value="Sim"> Sim</label>
+          <label><input type="radio" name="Prematuridade" value="Não"> Não</label>
+        </div>
+
+        <div class="section-note">Marcos do desenvolvimento</div>
+
+        <label for="andou_meses">Andou com quantos meses:</label>
+        <input type="text" id="andou_meses" name="Andou com quantos meses">
+
+        <label for="falou_meses">Falou as primeiras palavras com quantos meses:</label>
+        <input type="text" id="falou_meses" name="Falou as primeiras palavras com quantos meses">
+
+        <label for="controle_esfincteres">Controle de esfíncteres:</label>
+        <textarea id="controle_esfincteres" name="Controle de esfíncteres"></textarea>
+
+        <label for="atrasos_observados">Atrasos observados?</label>
+        <textarea id="atrasos_observados" name="Atrasos observados"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. Aspectos Emocionais e Comportamentais</legend>
+        <label for="frustracoes">Como a criança lida com frustrações?</label>
+        <textarea id="frustracoes" name="Frustrações"></textarea>
+
+        <label for="mudancas_humor">Mudanças bruscas de humor?</label>
+        <textarea id="mudancas_humor" name="Mudanças de humor"></textarea>
+
+        <label for="agressividade">Agressividade (verbal ou física)?</label>
+        <textarea id="agressividade" name="Agressividade"></textarea>
+
+        <label for="medos_angustias">Medos, angústias, inseguranças:</label>
+        <textarea id="medos_angustias" name="Medos, angústias, inseguranças"></textarea>
+
+        <label for="isolamento">Isolamento / dificuldade de fazer amigos:</label>
+        <textarea id="isolamento" name="Isolamento / dificuldade de fazer amigos"></textarea>
+
+        <label for="ansiedade_agitacao">Ansiedade / agitação / inquietude:</label>
+        <textarea id="ansiedade_agitacao" name="Ansiedade / agitação / inquietude"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. Relação Familiar</legend>
+        <label for="relacao_pais">Como a criança se relaciona com pai/mãe?</label>
+        <textarea id="relacao_pais" name="Relação com pai/mãe"></textarea>
+
+        <label for="relacao_irmaos">Como se relaciona com irmãos?</label>
+        <textarea id="relacao_irmaos" name="Relação com irmãos"></textarea>
+
+        <label for="conflitos_familia">Há conflitos frequentes em casa?</label>
+        <textarea id="conflitos_familia" name="Conflitos frequentes em casa"></textarea>
+
+        <label for="historico_luto_mudancas">Existe histórico de separações, luto ou mudanças importantes?</label>
+        <textarea id="historico_luto_mudancas" name="Histórico de separações, luto ou mudanças importantes"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. Saúde Geral</legend>
+        <label for="alergias_medicamentos">Alergias, uso de medicamentos:</label>
+        <textarea id="alergias_medicamentos" name="Alergias e uso de medicamentos"></textarea>
+
+        <label for="doencas_previas">Doenças prévias ou recorrentes:</label>
+        <textarea id="doencas_previas" name="Doenças prévias ou recorrentes"></textarea>
+
+        <label for="acompanhamento_medico">Acompanhamento médico atual:</label>
+        <textarea id="acompanhamento_medico" name="Acompanhamento médico atual"></textarea>
+
+        <label for="historico_terapia">Já fez terapia antes? Como foi?</label>
+        <textarea id="historico_terapia" name="Histórico de terapia"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. Observações dos Responsáveis</legend>
+        <label for="observacoes_responsaveis">O que mais considera importante relatar?</label>
+        <textarea id="observacoes_responsaveis" name="Observações adicionais dos responsáveis"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>10. Termo de Consentimento</legend>
+        <p class="section-note">
+          Declaro que as informações prestadas são verdadeiras e autorizo o acompanhamento psicológico da criança acima descrita.
+        </p>
+        <div class="checkbox-group" style="margin-top:8px;">
+          <label>
+            <input type="checkbox" name="Aceite do termo de consentimento" required>
+            Li e concordo com o termo de consentimento.
+          </label>
+        </div>
+        <div class="inline-group" style="margin-top:8px;">
+          <div>
+            <label for="assinatura_responsavel">Nome do responsável (para assinatura eletrônica):</label>
+            <input type="text" id="assinatura_responsavel" name="Nome do responsável (assinatura)">
+          </div>
+          <div>
+            <label for="data_assinatura">Data:</label>
+            <input type="date" id="data_assinatura" name="Data da assinatura">
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit">Enviar ficha de anamnese</button>
+      </div>
+      <p class="small-text">
+        Após o envio, os dados serão encaminhados para o e-mail configurado no Formspree
+        e analisados pela profissional responsável.
+      </p>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>

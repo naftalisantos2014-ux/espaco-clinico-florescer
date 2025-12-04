@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Obrigado</title>
+  <meta charset="UTF-8">
+  <title>Formulário enviado – Espaço Clínico Florescer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg,#e8f5e9,#f1f8e9);
+      margin:0;padding:0;
+    }
+    .wrap {
+      min-height:100vh;display:flex;align-items:center;
+      justify-content:center;padding:20px;
+    }
+    .card {
+      max-width:480px;width:100%;background:#ffffffee;
+      border-radius:18px;padding:26px 22px;
+      box-shadow:0 18px 30px rgba(0,0,0,.08);
+      text-align:center;border:1px solid #e0e0e0;
+    }
+    h1 {font-size:20px;color:#1b5e20;margin-bottom:8px;}
+    p {font-size:14px;color:#555;margin-bottom:4px;}
+    .badge {
+      display:inline-block;margin:8px 0 14px;
+      font-size:12px;padding:4px 10px;border-radius:999px;
+      background:#e8f5e9;color:#1b5e20;
+    }
+    a.btn {
+      display:inline-block;margin-top:10px;
+      padding:9px 18px;border-radius:999px;
+      text-decoration:none;background:#2e7d32;
+      color:#fff;font-size:14px;
+      box-shadow:0 10px 20px rgba(46,125,50,.45);
+    }
+    a.btn:hover {background:#256728;}
+    .small {margin-top:10px;font-size:11px;color:#777;}
+  </style>
 </head>
 <body>
-<h1>Formulário enviado com sucesso!</h1>
-<p>Obrigado por preencher a ficha.</p>
-<a href="index.html">Voltar ao início</a>
+  <div class="wrap">
+    <div class="card">
+      <h1>Formulário enviado com sucesso!</h1>
+      <span class="badge">Espaço Clínico Florescer</span>
+      <p>A ficha eletrônica de anamnese infantil foi recebida.</p>
+      <p>Em breve entraremos em contato utilizando os dados informados.</p>
+      <a class="btn" href="index.html">Voltar para a página inicial</a>
+      <p class="small">
+        Se precisar corrigir alguma informação, você poderá preencher uma nova ficha
+        ou entrar em contato pelo e-mail da clínica.
+      </p>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,11 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Espaço Clínico Florescer</title>
+  <meta charset="UTF-8">
+  <title>Espaço Clínico Florescer – Psicoterapia Infantil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --verde-escuro: #1b5e20;
+      --verde: #2e7d32;
+      --cinza: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg,#e8f5e9,#f1f8e9);
+      color:#222;
+    }
+    header {
+      background:#ffffffcc;
+      border-bottom:1px solid #e0e0e0;
+      backdrop-filter:blur(8px);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .topbar{
+      max-width:1080px;
+      margin:0 auto;
+      padding:12px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo-icon{
+      width:32px;height:32px;border-radius:50%;
+      background:radial-gradient(circle at 30% 20%,#c8e6c9,#2e7d32);
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:700;font-size:18px;
+    }
+    .logo-main{font-weight:700;color:var(--verde-escuro);font-size:18px;}
+    .logo-sub{font-size:12px;color:var(--cinza);}
+    nav a{
+      font-size:14px;color:var(--cinza);text-decoration:none;margin-left:16px;
+    }
+    nav a:hover{color:var(--verde-escuro);}
+    .hero{
+      max-width:1080px;margin:40px auto 24px;padding:0 20px;
+      display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2.4fr);gap:28px;align-items:center;
+    }
+    @media(max-width:800px){.hero{grid-template-columns:minmax(0,1fr);margin-top:24px;}}
+    .pill{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:4px 10px;border-radius:999px;
+      background:#e8f5e9;color:var(--verde-escuro);
+      font-size:12px;margin-bottom:8px;
+    }
+    h1{font-size:clamp(26px,3vw,34px);color:var(--verde-escuro);margin-bottom:10px;}
+    .hero p{font-size:15px;color:var(--cinza);line-height:1.5;margin-bottom:14px;}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 18px;border-radius:999px;border:none;
+      font-size:14px;text-decoration:none;cursor:pointer;
+      transition:.1s ease all;
+    }
+    .btn-primary{
+      background:var(--verde);color:#fff;
+      box-shadow:0 8px 16px rgba(46,125,50,.35);
+    }
+    .btn-primary:hover{
+      background:#256728;transform:translateY(-1px);
+      box-shadow:0 10px 20px rgba(46,125,50,.4);
+    }
+    .btn-ghost{
+      background:transparent;border:1px solid #c8e6c9;color:var(--verde-escuro);
+    }
+    .btn-ghost:hover{background:#f1f8e9;}
+    .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+    .badge{
+      font-size:11px;padding:3px 8px;border-radius:999px;
+      background:#ffffffaa;border:1px solid #e0e0e0;color:var(--cinza);
+    }
+    .hero-card{
+      background:#fff;border-radius:20px;padding:20px;
+      box-shadow:0 16px 30px rgba(0,0,0,.08);border:1px solid #e0e0e0;
+    }
+    .hero-card h2{font-size:16px;color:var(--verde-escuro);margin-bottom:6px;}
+    .hero-card p{font-size:13px;color:var(--cinza);margin-bottom:10px;}
+    .hero-card ul{font-size:13px;color:var(--cinza);margin-left:16px;margin-bottom:8px;}
+    .hero-card li{margin-bottom:4px;}
+    .hero-card-foot{font-size:11px;color:#777;margin-top:8px;}
+    .section{
+      max-width:1080px;margin:0 auto 36px;padding:0 20px;
+      display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:20px;
+    }
+    @media(max-width:800px){.section{grid-template-columns:minmax(0,1fr);}}
+    .section-card{
+      background:#ffffffdd;border-radius:18px;padding:18px 20px;
+      box-shadow:0 10px 22px rgba(0,0,0,.04);border:1px solid #e0e0e0;
+    }
+    .section-card h3{font-size:15px;color:var(--verde-escuro);margin-bottom:6px;}
+    .section-card p{font-size:13px;color:var(--cinza);margin-bottom:8px;line-height:1.5;}
+    .section-card ul{font-size:13px;color:var(--cinza);margin-left:16px;}
+    .section-card li{margin-bottom:4px;}
+    footer{
+      border-top:1px solid #e0e0e0;background:#ffffffcc;
+    }
+    .footer-inner{
+      max-width:1080px;margin:0 auto;padding:14px 20px;
+      font-size:12px;color:#666;display:flex;flex-wrap:wrap;
+      justify-content:space-between;gap:8px;
+    }
+  </style>
 </head>
 <body>
-<h1>Espaço Clínico Florescer</h1>
-<a href="anamnese.html">Preencher Ficha de Anamnese</a>
+<header>
+  <div class="topbar">
+    <div class="logo">
+      <div class="logo-icon">F</div>
+      <div>
+        <div class="logo-main">Espaço Clínico Florescer</div>
+        <div class="logo-sub">Psicanálise &amp; Atendimento Infantojuvenil</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#indicacoes">Quando procurar</a>
+      <a href="anamnese.html">Ficha de Anamnese</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="pill">Psicanálise clínica • Atendimento infantil</div>
+      <h1>Cuidado acolhedor para a saúde emocional das crianças.</h1>
+      <p>
+        No Espaço Clínico Florescer, cada criança é recebida com escuta, afeto e técnica.
+        A ficha de anamnese infantil nos ajuda a compreender melhor a história, o contexto
+        familiar e as necessidades de quem está chegando ao consultório.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="anamnese.html">Preencher Ficha de Anamnese Infantil</a>
+        <a class="btn btn-ghost" href="mailto:florescerespacoclinico.psi@gmail.com">Falar com a clínica</a>
+      </div>
+      <div class="badge-row">
+        <span class="badge">Psicanalista Clínica – Maura Santos</span>
+        <span class="badge">Especialista em Atendimento Infantojuvenil</span>
+        <span class="badge">Atendimento com horário agendado</span>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h2>Como funciona a ficha?</h2>
+      <p>A ficha eletrônica é preenchida pelos responsáveis e enviada com segurança para o e-mail da clínica.</p>
+      <ul>
+        <li>Informações sobre desenvolvimento e saúde;</li>
+        <li>Contexto familiar e escolar;</li>
+        <li>Auxilia na primeira entrevista clínica.</li>
+      </ul>
+      <p class="hero-card-foot">
+        Os dados são sigilosos e utilizados exclusivamente para fins clínicos, conforme o Código de Ética.
+      </p>
+    </aside>
+  </section>
+
+  <section id="sobre" class="section">
+    <div class="section-card">
+      <h3>Sobre o Espaço Clínico Florescer</h3>
+      <p>
+        O consultório é voltado para o cuidado da saúde emocional de crianças e adolescentes,
+        oferecendo um ambiente acolhedor para que possam simbolizar, brincar, falar e elaborar
+        suas experiências.
+      </p>
+      <p>
+        A escuta é pautada na psicanálise, respeitando a singularidade de cada sujeito e
+        valorizando a participação da família no processo terapêutico.
+      </p>
+    </div>
+    <div id="indicacoes" class="section-card">
+      <h3>Quando procurar atendimento?</h3>
+      <p>Algumas situações em que o acompanhamento psicológico pode ser indicado:</p>
+      <ul>
+        <li>Dificuldades escolares, atenção ou aprendizagem;</li>
+        <li>Ansiedade, medos intensos, enurese, pesadelos recorrentes;</li>
+        <li>Comportamentos de agressividade, isolamento ou regressão;</li>
+        <li>Experiências de separação, luto, adoção ou mudanças importantes;</li>
+        <li>Queixas frequentes trazidas pela escola ou pela família.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© Espaço Clínico Florescer – Psicanálise e Atendimento Infantojuvenil.</span>
+    <span>Contato: florescerespacoclinico.psi@gmail.com</span>
+  </div>
+</footer>
 </body>
 </html>
